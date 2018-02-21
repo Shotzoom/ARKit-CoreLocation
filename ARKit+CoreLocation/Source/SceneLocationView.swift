@@ -42,7 +42,7 @@ public enum LocationEstimateMethod {
 open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     ///The limit to the scene, in terms of what data is considered reasonably accurate.
     ///Measured in meters.
-    private static let sceneLimit = 100.0
+    public static var sceneLimit = 100.0
     
     public weak var locationDelegate: SceneLocationViewDelegate?
     
@@ -50,7 +50,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     ///Not advisable to change this as the scene is ongoing.
     public var locationEstimateMethod: LocationEstimateMethod = .mostRelevantEstimate
     
-    let locationManager = LocationManager()
+    public let locationManager = LocationManager()
     ///When set to true, displays an axes node at the start of the scene
     public var showAxesNode = false
     
@@ -58,7 +58,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     
     private var sceneLocationEstimates = [SceneLocationEstimate]()
     
-    public private(set) var sceneNode: SCNNode? {
+    public var sceneNode: SCNNode? {
         didSet {
             if sceneNode != nil {
                 for locationNode in locationNodes {
@@ -190,7 +190,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     }
     
     ///Adds a scene location estimate based on current time, camera position and location from location manager
-    fileprivate func addSceneLocationEstimate(location: CLLocation) {
+    public func addSceneLocationEstimate(location: CLLocation) {
         if let position = currentScenePosition() {
             let sceneLocationEstimate = SceneLocationEstimate(location: location, position: position)
             self.sceneLocationEstimates.append(sceneLocationEstimate)
