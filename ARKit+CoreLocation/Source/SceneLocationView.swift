@@ -317,7 +317,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     }
     
     ///Gives the best estimate of the location of a node
-    func locationOfLocationNode(_ locationNode: LocationNode) -> CLLocation {
+    public func locationOfLocationNode(_ locationNode: LocationNode) -> CLLocation {
         if locationNode.locationConfirmed || locationEstimateMethod == .coreLocationDataOnly {
             return locationNode.location!
         }
@@ -349,7 +349,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         }
     }
     
-    public func updatePositionAndScaleOfLocationNode(locationNode: LocationNode, initialSetup: Bool = false, animated: Bool = false, duration: TimeInterval = 0.1) {
+    open func updatePositionAndScaleOfLocationNode(locationNode: LocationNode, initialSetup: Bool = false, animated: Bool = false, duration: TimeInterval = 0.1) {
         guard let currentPosition = currentScenePosition(),
             let currentLocation = currentLocation() else {
             return

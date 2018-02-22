@@ -287,6 +287,10 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
     func sceneLocationViewDidUpdateLocationAndScaleOfLocationNode(sceneLocationView: SceneLocationView, locationNode: LocationNode) {
         
     }
+    
+    func sceneLocationViewDidUpdateLocationNodes(sceneLocationView: SceneLocationView) {
+        
+    }
 }
 
 extension DispatchQueue {
