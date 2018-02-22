@@ -24,6 +24,8 @@ public protocol SceneLocationViewDelegate: class {
     func sceneLocationViewDidSetupSceneNode(sceneLocationView: SceneLocationView, sceneNode: SCNNode)
     
     func sceneLocationViewDidUpdateLocationAndScaleOfLocationNode(sceneLocationView: SceneLocationView, locationNode: LocationNode)
+    
+    func sceneLocationViewDidUpdateLocationNodes(sceneLocationView: SceneLocationView)
 }
 
 ///Different methods which can be used when determining locations (such as the user's location).
@@ -147,6 +149,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         removeOldLocationEstimates()
         confirmLocationOfDistantLocationNodes()
         updatePositionAndScaleOfLocationNodes()
+        locationDelegate?.sceneLocationViewDidUpdateLocationNodes(sceneLocationView: self)
     }
     
     //MARK: True North
