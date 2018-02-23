@@ -105,7 +105,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     }
 
     private func finishInitialization() {
-        locationManager.delegate = self
+        //locationManager.delegate = self
 
         delegate = self
 
