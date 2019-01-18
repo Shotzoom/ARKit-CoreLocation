@@ -133,7 +133,8 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         }
         
         // Run the view's session
-        session.run(configuration)
+        //session.run(configuration)
+        session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         updateEstimatesTimer?.invalidate()
         updateEstimatesTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(SceneLocationView.updateLocationData), userInfo: nil, repeats: true)
