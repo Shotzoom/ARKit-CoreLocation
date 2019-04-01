@@ -13,7 +13,7 @@ import MapKit
 
 //Should conform to delegate here, add in future commit
 @available(iOS 11.0, *)
-public class SceneLocationView: ARSCNView {
+open class SceneLocationView: ARSCNView {
     /// The limit to the scene, in terms of what data is considered reasonably accurate.
     /// Measured in meters.
     static let sceneLimit = 100.0
