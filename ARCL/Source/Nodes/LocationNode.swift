@@ -129,7 +129,7 @@ open class LocationNode: SCNNode {
         return adjustedDistance
     }
 
-    func updatePositionAndScale(setup: Bool = false, scenePosition: SCNVector3?,
+    open func updatePositionAndScale(setup: Bool = false, scenePosition: SCNVector3?,
                                 locationManager: SceneLocationManager, onCompletion: (() -> Void)) {
         guard let position = scenePosition, locationManager.currentLocation != nil else { return }
 

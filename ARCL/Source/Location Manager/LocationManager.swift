@@ -41,7 +41,7 @@ public class LocationManager: NSObject {
     override init() {
         super.init()
 
-        self.locationManager = CLLocationManager()
+//        self.locationManager = CLLocationManager()
 //        self.locationManager!.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 //        self.locationManager!.distanceFilter = kCLDistanceFilterNone
 //        self.locationManager!.headingFilter = kCLHeadingFilterNone

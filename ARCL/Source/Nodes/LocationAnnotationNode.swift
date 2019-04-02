@@ -65,7 +65,7 @@ open class LocationAnnotationNode: LocationNode {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func updatePositionAndScale(setup: Bool = false, scenePosition: SCNVector3?,
+    override open func updatePositionAndScale(setup: Bool = false, scenePosition: SCNVector3?,
                                          locationManager: SceneLocationManager, onCompletion: (() -> Void)) {
         guard let position = scenePosition, let location = locationManager.currentLocation else { return }
 
