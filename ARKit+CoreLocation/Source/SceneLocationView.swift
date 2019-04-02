@@ -113,7 +113,7 @@ open class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         showsStatistics = false
 
         if showFeaturePoints {
-            debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+            debugOptions = [SCNDebugOptions.showFeaturePoints]
         }
     }
     
